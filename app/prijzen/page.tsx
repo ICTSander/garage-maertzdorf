@@ -41,11 +41,11 @@ export default function PrijzenPage() {
           </p>
 
           <div className="mt-4 flex items-baseline gap-2 text-slate-900">
-            <span className="text-xl font-semibold">€ 750</span>
+            <span className="text-xl font-semibold">€ 349</span>
             <span className="text-xs text-slate-600">eenmalige setup</span>
           </div>
           <div className="text-xs text-slate-600">
-            + <span className="font-semibold">€ 129 per maand</span>
+            + <span className="font-semibold">€ 99 per maand</span>
           </div>
 
           <ul className="mt-4 list-disc space-y-1 pl-4 text-xs text-slate-600">
@@ -80,11 +80,11 @@ export default function PrijzenPage() {
           </p>
 
           <div className="mt-4 flex items-baseline gap-2 text-slate-900">
-            <span className="text-xl font-semibold">€ 1.250</span>
+            <span className="text-xl font-semibold">€ 599</span>
             <span className="text-xs text-slate-600">eenmalige setup</span>
           </div>
           <div className="text-xs text-slate-600">
-            + <span className="font-semibold">€ 249 per maand</span>
+            + <span className="font-semibold">€ 149 per maand</span>
           </div>
 
           <ul className="mt-4 list-disc space-y-1 pl-4 text-xs text-slate-700">
