@@ -23,10 +23,6 @@ export function Footer() {
         <div>
           <p className="font-semibold text-slate-900">Legal</p>
           <p className="mt-2 text-xs">
-            KVK: {siteConfig.kvk}
-            <br />
-            BTW: {siteConfig.btw}
-            <br />
             <Link href="/privacy" className="underline underline-offset-4">
               Privacy &amp; cookies
             </Link>

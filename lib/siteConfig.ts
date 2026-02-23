@@ -4,10 +4,8 @@ export const siteConfig = {
     "Wij bouwen snelle websites en online leadformulieren voor lokale garages. Meer afspraken, meer apk's en meer onderhoud zonder gedoe.",
   url: "https://www.example-garageleads.nl",
   ogImage: "https://www.example-garageleads.nl/og-placeholder.png",
-  contactEmail: "info@garageleads.nl",
-  contactPhone: "+31 6 00000000",
-  kvk: "KVK 00000000",
-  btw: "BTW NL000000000B01"
+  contactEmail: "autogarageflows@outlook.com",
+  contactPhone: "+31 6 18233970"
 };
 
 export const mainNav = [
