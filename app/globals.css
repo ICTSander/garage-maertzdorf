@@ -11,10 +11,6 @@ body {
   @apply bg-neutral-50 text-neutral-900 antialiased;
 }
 
-a {
-  @apply text-primary-600 hover:text-primary-700 transition-colors;
-}
-
 .container-max {
   @apply mx-auto max-w-5xl px-4;
 }
