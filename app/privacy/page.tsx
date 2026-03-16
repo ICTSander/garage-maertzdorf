@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="container-max prose prose-sm max-w-3xl py-10 sm:py-12 prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-primary-700">
+    <div className="container-max prose prose-sm max-w-3xl py-10 sm:py-12 prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-a:text-primary-700">
       <h1>Privacyverklaring</h1>
       <p>
         Autobedrijf Maertzdorf hecht veel waarde aan uw privacy. In deze

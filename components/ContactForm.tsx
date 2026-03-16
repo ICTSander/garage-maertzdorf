@@ -81,11 +81,11 @@ export function ContactForm() {
   const isSubmitting = formState === "submitting";
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60 sm:p-8">
-      <h2 className="text-lg font-semibold text-slate-900">
+    <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200/60 sm:p-8">
+      <h2 className="text-lg font-semibold text-neutral-900">
         Neem contact op
       </h2>
-      <p className="mt-1 text-sm text-slate-600">
+      <p className="mt-1 text-sm text-neutral-600">
         Heeft u een vraag of wilt u een afspraak maken? Vul het formulier in en
         wij nemen zo snel mogelijk contact met u op.
       </p>
@@ -111,13 +111,13 @@ export function ContactForm() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-xs font-medium text-slate-700">
+            <label className="block text-xs font-medium text-neutral-700">
               Naam *
             </label>
             <input
               name="name"
               type="text"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+              className="mt-1 w-full rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
               disabled={isSubmitting}
             />
             {errors.name && (
@@ -125,13 +125,13 @@ export function ContactForm() {
             )}
           </div>
           <div>
-            <label className="block text-xs font-medium text-slate-700">
+            <label className="block text-xs font-medium text-neutral-700">
               Telefoon *
             </label>
             <input
               name="phone"
               type="tel"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+              className="mt-1 w-full rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
               disabled={isSubmitting}
             />
             {errors.phone && (
@@ -141,13 +141,13 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-700">
+          <label className="block text-xs font-medium text-neutral-700">
             E-mail *
           </label>
           <input
             name="email"
             type="email"
-            className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+            className="mt-1 w-full rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
             disabled={isSubmitting}
           />
           {errors.email && (
@@ -156,12 +156,12 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-700">
+          <label className="block text-xs font-medium text-neutral-700">
             Waar kunnen wij u mee helpen? *
           </label>
           <select
             name="service"
-            className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+            className="mt-1 w-full rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
             disabled={isSubmitting}
             defaultValue=""
           >
@@ -181,13 +181,13 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-700">
+          <label className="block text-xs font-medium text-neutral-700">
             Uw bericht
           </label>
           <textarea
             name="message"
             rows={4}
-            className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+            className="mt-1 w-full rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
             placeholder="Beschrijf kort waarmee wij u kunnen helpen."
             disabled={isSubmitting}
           />
@@ -196,12 +196,12 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex w-full items-center justify-center rounded-full bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-primary-500/30 transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-primary-400"
+          className="inline-flex w-full items-center justify-center rounded-full bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-primary-400/30 transition hover:bg-primary-600 disabled:cursor-not-allowed disabled:bg-primary-300"
         >
           {isSubmitting ? "Verzenden..." : "Bericht versturen"}
         </button>
 
-        <p className="text-[11px] text-slate-500">
+        <p className="text-[11px] text-neutral-500">
           Door dit formulier te versturen gaat u akkoord met onze{" "}
           <a
             href="/privacy"

@@ -6,23 +6,14 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: "#f0f4f8",
-          100: "#d9e2ec",
-          200: "#bcccdc",
-          300: "#9fb3c8",
-          400: "#829ab1",
-          500: "#627d98",
-          600: "#1b3a5c",
-          700: "#143052",
-          800: "#102a43",
-          900: "#0a1f33"
-        }
-      }
+  extend: {
+    colors: {
+      primary: "#D9772B",   // oranje
+      dark: "#4A4A4A",      // donker grijs
+      light: "#F5F5F5"      // achtergrond
     }
-  },
+  }
+},
   plugins: []
 };
 
