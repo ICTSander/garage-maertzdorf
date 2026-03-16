@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Diensten voor garages",
+  title: "Diensten",
   description:
-    "Overzicht van onze diensten: websites, leadformulieren en maandelijkse optimalisatie voor lokale garages.",
+    "Overzicht van onze diensten: APK-keuring, onderhoud, reparatie, spuitwerk en schadeherstel bij Autobedrijf Maertzdorf in Bocholtz.",
   openGraph: {
-    title: "Diensten voor garages",
+    title: "Diensten – Autobedrijf Maertzdorf",
     description:
-      "Van snelle websites tot slimme leadformulieren: alles gericht op meer afspraken in je werkplaats."
+      "APK-keuring, onderhoud, reparatie, spuitwerk en schadeherstel. Al meer dan 50 jaar in Bocholtz."
   }
 };
 
@@ -17,54 +17,52 @@ export default function DienstenPage() {
     <div className="container-max py-10 sm:py-12">
       <div className="max-w-2xl">
         <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-          Wat we voor je garage doen
+          Onze diensten
         </h1>
         <p className="mt-3 text-sm text-slate-600">
-          We richten ons op &eacute;&eacute;n ding:{" "}
-          <span className="font-semibold">meer goede aanvragen voor jouw garage</span>.
-          Geen vage marketing, maar een duidelijke website en formulieren die
-          werken.
+          Bij Autobedrijf Maertzdorf kunt u terecht voor een compleet pakket aan
+          autodiensten. Onze ervaren monteurs staan voor u klaar met persoonlijk
+          advies en vakkundig werk.
         </p>
       </div>
 
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">
-            1. Websites voor garages
+            1. APK-keuring
           </p>
           <h2 className="mt-2 text-sm font-semibold text-slate-900">
-            Moderne, snelle website die leads oplevert
+            Snel en vakkundig gekeurd
           </h2>
           <p className="mt-2 text-xs text-slate-600">
-            We bouwen een overzichtelijke site waarin direct duidelijk is wat je
-            doet, waar je zit en hoe klanten een afspraak kunnen aanvragen. Met
-            duidelijke knoppen, heldere teksten en een mobielvriendelijk design.
+            Uw APK-keuring is bij ons in goede handen. Wij voeren de keuring
+            zorgvuldig uit en bespreken eventuele aandachtspunten direct met u.
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-4 text-xs text-slate-600">
-            <li>Mobielvriendelijk (werkt perfect op telefoon en tablet)</li>
-            <li>Snel laden, ook op 4G in de werkplaats</li>
-            <li>Duidelijke call-to-actions voor apk, onderhoud en reparatie</li>
-            <li>Optie voor meerdere vestigingen / locaties</li>
+            <li>RDW-erkend keurstation</li>
+            <li>Keuring vaak dezelfde dag mogelijk</li>
+            <li>Duidelijke uitleg bij afkeurpunten</li>
+            <li>Reparatie en herkeuring in &eacute;&eacute;n keer geregeld</li>
           </ul>
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">
-            2. Online leadformulieren
+            2. Onderhoud &amp; service
           </p>
           <h2 className="mt-2 text-sm font-semibold text-slate-900">
-            Slimme formulieren voor meer afspraken
+            Regelmatig onderhoud, zorgeloos rijden
           </h2>
           <p className="mt-2 text-xs text-slate-600">
-            We plaatsen op strategische plekken formulieren: algemene afspraak,
-            apk-aanvraag, onderhoudsaanvraag of actiepagina. Ingevulde leads
-            komen direct in je mailbox, zodat jij terug kunt bellen.
+            Regelmatig onderhoud voorkomt dure reparaties en verlengt de
+            levensduur van uw auto. Wij verzorgen kleine en grote beurten voor
+            alle merken.
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-4 text-xs text-slate-600">
-            <li>Leadformulieren per dienst (apk, onderhoud, banden, etc.)</li>
-            <li>Directe e-mail notificaties naar jouw inbox</li>
-            <li>Velden afgestemd op wat jij moet weten voor een goede offerte</li>
-            <li>Beveiligde verzending via een externe formulierdienst</li>
+            <li>Kleine en grote beurt</li>
+            <li>Olieverversing en filterwissels</li>
+            <li>Remenset en distributieriemen</li>
+            <li>Seizoensgebonden checks (airco, banden)</li>
           </ul>
         </div>
       </div>
@@ -72,41 +70,63 @@ export default function DienstenPage() {
       <div className="mt-5 grid gap-5 md:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">
-            3. Maandelijkse optimalisatie
+            3. Reparatie
           </p>
           <h2 className="mt-2 text-sm font-semibold text-slate-900">
-            Elke maand een beetje beter
+            Diagnose en reparatie van alle merken
           </h2>
           <p className="mt-2 text-xs text-slate-600">
-            We kijken maandelijks mee naar de ingevulde formulieren en hoe
-            bezoekers zich gedragen. Op basis daarvan passen we teksten, knoppen
-            en formulieren aan voor meer kwaliteit en meer aanvragen.
+            Of het nu gaat om een waarschuwingslampje, een vreemd geluid of een
+            motorstoring: wij beschikken over de kennis en apparatuur om het
+            probleem te vinden en op te lossen.
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-4 text-xs text-slate-600">
-            <li>Analyse van ingevulde leads (hoe zijn ze binnengekomen?)</li>
-            <li>A/B testen van teksten en knoppen</li>
-            <li>Aanpassingen op seizoensacties (winter-/zomerbanden, airco)</li>
-            <li>Rapportage in duidelijke taal, geen marketingjargon</li>
+            <li>Elektronische diagnose met moderne apparatuur</li>
+            <li>Motor- en versnellingsbakproblemen</li>
+            <li>Remmen, ophanging en stuurinrichting</li>
+            <li>Uitlaat- en koelsysteemreparaties</li>
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm shadow-slate-200/60">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">
-            4. Techniek & support
+            4. Spuitwerk
           </p>
           <h2 className="mt-2 text-sm font-semibold text-slate-900">
-            We regelen de technische kant
+            Professioneel spuitwerk met oog voor detail
           </h2>
           <p className="mt-2 text-xs text-slate-600">
-            Geen zorgen over hosting, updates of beveiliging. We draaien je
-            website op moderne technologie (Next.js) en zorgen dat alles blijft
-            werken.
+            Van een kleine bijwerking tot een volledige spuitbeurt: wij zorgen
+            voor een perfect resultaat met kleurmatching en professionele
+            lakproducten.
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-4 text-xs text-slate-600">
-            <li>Snelle hosting in de cloud</li>
-            <li>Automatische beveiligingsupdates</li>
-            <li>Monitoring op uptime</li>
-            <li>Support per mail voor wijzigingen en vragen</li>
+            <li>Kleurmatching met computeranalyse</li>
+            <li>Plaatselijke reparatie of volledige overlakking</li>
+            <li>Hoogwaardige lakproducten</li>
+            <li>Zorgvuldige voorbereiding en afwerking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-5 md:grid-cols-2">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm shadow-slate-200/60">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">
+            5. Schadeherstel
+          </p>
+          <h2 className="mt-2 text-sm font-semibold text-slate-900">
+            Vakkundige reparatie van schade
+          </h2>
+          <p className="mt-2 text-xs text-slate-600">
+            Schade aan uw auto is vervelend. Wij zorgen ervoor dat uw auto er
+            weer als nieuw uitziet. Van kleine deuken tot grotere
+            aanrijdingsschade.
+          </p>
+          <ul className="mt-3 list-disc space-y-1 pl-4 text-xs text-slate-600">
+            <li>Deuk- en krasreparatie</li>
+            <li>Aanrijdingsschade herstellen</li>
+            <li>Bumper- en plaatwerkherstel</li>
+            <li>Hulp bij schadeclaims en verzekeringen</li>
           </ul>
         </div>
       </div>
@@ -115,22 +135,21 @@ export default function DienstenPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold text-slate-900">
-              Benieuwd hoe dit er voor jouw garage uitziet?
+              Hulp nodig of een afspraak maken?
             </p>
             <p className="mt-1 text-xs text-slate-700">
-              We maken gratis een demo op basis van jouw huidige situatie.
-              Daarna beslis je pas of je verder wilt.
+              Neem gerust contact met ons op. Wij helpen u graag verder met
+              eerlijk advies.
             </p>
           </div>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-primary-600 px-4 py-2 text-xs font-semibold text-white shadow-sm shadow-primary-500/30 hover:bg-primary-700"
           >
-            Gratis demo aanvragen
+            Neem contact op
           </Link>
         </div>
       </div>
     </div>
   );
 }
-

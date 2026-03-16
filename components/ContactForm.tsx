@@ -27,27 +27,22 @@ export function ContactForm() {
 
     const values = {
       name: String(formData.get("name") || "").trim(),
-      garageName: String(formData.get("garageName") || "").trim(),
-      city: String(formData.get("city") || "").trim(),
       email: String(formData.get("email") || "").trim(),
       phone: String(formData.get("phone") || "").trim(),
-      website: String(formData.get("website") || "").trim(),
-      focus: String(formData.get("focus") || "").trim(),
+      service: String(formData.get("service") || "").trim(),
       message: String(formData.get("message") || "").trim()
     };
 
     const newErrors: Record<string, string> = {};
 
-    if (!values.name) newErrors.name = "Vul je naam in.";
-    if (!values.garageName) newErrors.garageName = "Vul de naam van je garage in.";
-    if (!values.city) newErrors.city = "Vul je plaats in.";
+    if (!values.name) newErrors.name = "Vul uw naam in.";
     if (!values.email) {
-      newErrors.email = "Vul je e-mailadres in.";
+      newErrors.email = "Vul uw e-mailadres in.";
     } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email)) {
       newErrors.email = "Dit lijkt geen geldig e-mailadres.";
     }
-    if (!values.phone) newErrors.phone = "Vul je telefoonnummer in.";
-    if (!values.focus) newErrors.focus = "Kies waar je meer van wilt.";
+    if (!values.phone) newErrors.phone = "Vul uw telefoonnummer in.";
+    if (!values.service) newErrors.service = "Kies een dienst.";
 
     setErrors(newErrors);
 
@@ -66,8 +61,8 @@ export function ContactForm() {
         },
         body: JSON.stringify({
           ...values,
-          _subject: "Nieuwe demo-aanvraag via Garage Leads",
-          _formName: "Garage Leads demo formulier"
+          _subject: `Nieuwe aanvraag via website – ${values.service}`,
+          _formName: "Autobedrijf Maertzdorf contactformulier"
         })
       });
 
@@ -88,11 +83,11 @@ export function ContactForm() {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60 sm:p-8">
       <h2 className="text-lg font-semibold text-slate-900">
-        Vraag een gratis demo aan
+        Neem contact op
       </h2>
       <p className="mt-1 text-sm text-slate-600">
-        Vul in waar je als garage meer van wilt, dan sturen we je binnen 24 uur
-        een demo-link met voorbeelden en concrete ideeën.
+        Heeft u een vraag of wilt u een afspraak maken? Vul het formulier in en
+        wij nemen zo snel mogelijk contact met u op.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
@@ -104,13 +99,13 @@ export function ContactForm() {
 
         {formState === "success" && (
           <p className="rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-800">
-            Bedankt! We sturen je binnen 24 uur een demo-link.
+            Bedankt voor uw bericht! Wij nemen zo snel mogelijk contact met u op.
           </p>
         )}
 
         {formState === "error" && !errors.global && (
           <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
-            Hmm, ging iets mis. Probeer opnieuw.
+            Er ging iets mis. Probeer het opnieuw of bel ons.
           </p>
         )}
 
@@ -131,66 +126,6 @@ export function ContactForm() {
           </div>
           <div>
             <label className="block text-xs font-medium text-slate-700">
-              Garage naam *
-            </label>
-            <input
-              name="garageName"
-              type="text"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
-              disabled={isSubmitting}
-            />
-            {errors.garageName && (
-              <p className="mt-1 text-xs text-red-600">{errors.garageName}</p>
-            )}
-          </div>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label className="block text-xs font-medium text-slate-700">
-              Plaats *
-            </label>
-            <input
-              name="city"
-              type="text"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
-              disabled={isSubmitting}
-            />
-            {errors.city && (
-              <p className="mt-1 text-xs text-red-600">{errors.city}</p>
-            )}
-          </div>
-          <div>
-            <label className="block text-xs font-medium text-slate-700">
-              Huidige website url
-            </label>
-            <input
-              name="website"
-              type="url"
-              placeholder="https://"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
-              disabled={isSubmitting}
-            />
-          </div>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label className="block text-xs font-medium text-slate-700">
-              E-mail *
-            </label>
-            <input
-              name="email"
-              type="email"
-              className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
-              disabled={isSubmitting}
-            />
-            {errors.email && (
-              <p className="mt-1 text-xs text-red-600">{errors.email}</p>
-            )}
-          </div>
-          <div>
-            <label className="block text-xs font-medium text-slate-700">
               Telefoon *
             </label>
             <input
@@ -207,36 +142,53 @@ export function ContactForm() {
 
         <div>
           <label className="block text-xs font-medium text-slate-700">
-            Waar wil je meer van? *
+            E-mail *
           </label>
-          <select
-            name="focus"
+          <input
+            name="email"
+            type="email"
             className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
             disabled={isSubmitting}
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Kies een optie
-            </option>
-            <option value="meer afspraken">Meer afspraken</option>
-            <option value="meer apk">Meer apk</option>
-            <option value="meer onderhoud">Meer onderhoud</option>
-            <option value="algemeen">Algemeen</option>
-          </select>
-          {errors.focus && (
-            <p className="mt-1 text-xs text-red-600">{errors.focus}</p>
+          />
+          {errors.email && (
+            <p className="mt-1 text-xs text-red-600">{errors.email}</p>
           )}
         </div>
 
         <div>
           <label className="block text-xs font-medium text-slate-700">
-            Bericht
+            Waar kunnen wij u mee helpen? *
+          </label>
+          <select
+            name="service"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
+            disabled={isSubmitting}
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Kies een dienst
+            </option>
+            <option value="APK-keuring">APK-keuring</option>
+            <option value="Onderhoud">Onderhoud &amp; service</option>
+            <option value="Reparatie">Reparatie</option>
+            <option value="Spuitwerk">Spuitwerk</option>
+            <option value="Schadeherstel">Schadeherstel</option>
+            <option value="Overig">Overig</option>
+          </select>
+          {errors.service && (
+            <p className="mt-1 text-xs text-red-600">{errors.service}</p>
+          )}
+        </div>
+
+        <div>
+          <label className="block text-xs font-medium text-slate-700">
+            Uw bericht
           </label>
           <textarea
             name="message"
             rows={4}
             className="mt-1 w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-primary-100 focus:bg-white focus:ring-2"
-            placeholder="Vertel kort wat voor garage je hebt en waar je nu tegenaan loopt."
+            placeholder="Beschrijf kort waarmee wij u kunnen helpen."
             disabled={isSubmitting}
           />
         </div>
@@ -246,11 +198,11 @@ export function ContactForm() {
           disabled={isSubmitting}
           className="inline-flex w-full items-center justify-center rounded-full bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-primary-500/30 transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-primary-400"
         >
-          {isSubmitting ? "Verzenden..." : "Gratis demo aanvragen"}
+          {isSubmitting ? "Verzenden..." : "Bericht versturen"}
         </button>
 
         <p className="text-[11px] text-slate-500">
-          Door dit formulier te versturen ga je akkoord met onze{" "}
+          Door dit formulier te versturen gaat u akkoord met onze{" "}
           <a
             href="/privacy"
             className="underline underline-offset-4 hover:text-primary-600"
@@ -263,4 +215,3 @@ export function ContactForm() {
     </div>
   );
 }
-

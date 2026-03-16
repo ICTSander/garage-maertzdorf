@@ -1,19 +1,22 @@
 export const siteConfig = {
-  name: "Garage Leads",
+  name: "Autobedrijf Maertzdorf",
   description:
-    "Wij bouwen snelle websites en online leadformulieren voor lokale garages. Meer afspraken, meer apk's en meer onderhoud zonder gedoe.",
-  url: "https://www.example-garageleads.nl",
-  ogImage: "https://www.example-garageleads.nl/og-placeholder.png",
-  contactEmail: "autogarageflows@outlook.com",
-  contactPhone: "+31 6 18233970"
+    "Autobedrijf Maertzdorf in Bocholtz – al meer dan 50 jaar uw betrouwbare partner voor APK-keuring, onderhoud, reparatie, spuitwerk en schadeherstel.",
+  url: "https://www.autobedrijfmaertzdorf.nl",
+  ogImage: "https://www.autobedrijfmaertzdorf.nl/og-image.png",
+  contactEmail: "info@autobedrijfmaertzdorf.nl",
+  contactPhone: "+31 45 000 0000",
+  address: {
+    street: "Reinert 11a",
+    postcode: "6351 HK",
+    city: "Bocholtz",
+    region: "Zuid-Limburg"
+  }
 };
 
 export const mainNav = [
   { href: "/", label: "Home" },
   { href: "/diensten", label: "Diensten" },
-  { href: "/prijzen", label: "Prijzen" },
-  { href: "/cases", label: "Cases" },
   { href: "/over-ons", label: "Over ons" },
   { href: "/contact", label: "Contact" }
 ];
-

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { ContactForm } from "../../components/ContactForm";
+import { siteConfig } from "../../lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Contact & gratis demo",
+  title: "Contact",
   description:
-    "Vraag een gratis demo aan van een website en leadformulier op maat voor jouw garage.",
+    "Neem contact op met Autobedrijf Maertzdorf in Bocholtz. Maak een afspraak voor APK, onderhoud, reparatie of schadeherstel.",
   openGraph: {
-    title: "Contact & gratis demo",
+    title: "Contact – Autobedrijf Maertzdorf",
     description:
-      "Laat je gegevens achter en ontvang binnen 24 uur een demo-link."
+      "Bel ons of vul het contactformulier in. Wij helpen u graag verder."
   }
 };
 
@@ -17,12 +18,11 @@ export default function ContactPage() {
     <div className="container-max py-10 sm:py-12">
       <div className="max-w-2xl">
         <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-          Vraag een gratis demo aan
+          Contact
         </h1>
         <p className="mt-3 text-sm text-slate-600">
-          Vul het formulier in en we sturen je binnen 24 uur een{" "}
-          <span className="font-semibold">demo-link</span> van een website en
-          formulier die passen bij jouw garage. Je zit nergens aan vast.
+          Heeft u een vraag of wilt u een afspraak maken? Neem gerust contact
+          met ons op via telefoon of het onderstaande formulier.
         </p>
       </div>
 
@@ -31,30 +31,47 @@ export default function ContactPage() {
         <aside className="space-y-4 text-xs text-slate-600">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/60">
             <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">
-              Wat je ontvangt
+              Adres
             </p>
-            <ul className="mt-2 ml-4 list-disc space-y-1">
-              <li>Een online voorbeeldsite die lijkt op jouw garage</li>
-              <li>Een of meerdere leadformulieren op maat</li>
-              <li>Korte uitlegvideo (optioneel) met toelichting</li>
-              <li>Een indicatie van een passend pakket en prijs</li>
-            </ul>
+            <p className="mt-2 text-sm font-semibold text-slate-900">
+              Autobedrijf Maertzdorf
+            </p>
+            <p className="mt-1">
+              {siteConfig.address.street}
+              <br />
+              {siteConfig.address.postcode} {siteConfig.address.city}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/60">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">
+              Telefoon &amp; e-mail
+            </p>
+            <p className="mt-2">
+              Tel:{" "}
+              <a
+                href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
+                className="font-semibold text-slate-900 hover:text-primary-600"
+              >
+                {siteConfig.contactPhone}
+              </a>
+            </p>
+            <p className="mt-1">
+              E-mail:{" "}
+              <a
+                href={`mailto:${siteConfig.contactEmail}`}
+                className="font-semibold text-slate-900 hover:text-primary-600"
+              >
+                {siteConfig.contactEmail}
+              </a>
+            </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm shadow-slate-200/60">
             <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">
-              Hoe we met je gegevens omgaan
+              Bereikbaarheid
             </p>
-            <p className="mt-1">
-              We gebruiken je gegevens alleen om contact met je op te nemen over
-              de demo en een eventueel vervolg. Geen nieuwsbrieven, geen
-              doorverkoop. Meer hierover in onze{" "}
-              <a
-                href="/privacy"
-                className="underline underline-offset-4 hover:text-primary-600"
-              >
-                privacyverklaring
-              </a>
-              .
+            <p className="mt-2">
+              Wij zijn centraal gelegen in Bocholtz, goed bereikbaar vanuit
+              Simpelveld, Vaals, Kerkrade, Gulpen en omstreken in Zuid-Limburg.
             </p>
           </div>
         </aside>
@@ -62,4 +79,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
