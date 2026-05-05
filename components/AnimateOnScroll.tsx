@@ -2,14 +2,20 @@
 
 import { useEffect, useRef, ReactNode } from "react";
 
+type Variant = "up" | "left" | "right" | "fade";
+
 export function AnimateOnScroll({
   children,
   className = "",
   delay = 0,
+  variant = "up",
+  threshold = 0.12,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: Variant;
+  threshold?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,17 +30,17 @@ export function AnimateOnScroll({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold }
     );
     observer.observe(el);
     return () => {
       observer.disconnect();
       clearTimeout(timer);
     };
-  }, [delay]);
+  }, [delay, threshold]);
 
   return (
-    <div ref={ref} className={`fade-up ${className}`}>
+    <div ref={ref} className={`anim-base anim-${variant} ${className}`}>
       {children}
     </div>
   );

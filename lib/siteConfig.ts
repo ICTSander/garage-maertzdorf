@@ -15,8 +15,8 @@ export const siteConfig = {
 };
 
 export const mainNav = [
-  { href: "/", label: "Home" },
-  { href: "/diensten", label: "Diensten" },
-  { href: "/over-ons", label: "Over ons" },
-  { href: "/contact", label: "Contact" }
+  { href: "#diensten", label: "Diensten" },
+  { href: "#over-ons", label: "Over ons" },
+  { href: "#reviews", label: "Reviews" },
+  { href: "#contact", label: "Contact" }
 ];
