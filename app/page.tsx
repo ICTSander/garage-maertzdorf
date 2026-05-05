@@ -17,307 +17,288 @@ export const metadata: Metadata = {
 
 const diensten = [
   {
+    nr: "01",
     title: "APK-keuring",
+    sub: "RDW-erkend · Vaak dezelfde dag",
     description:
-      "RDW-erkend keurstation. Keuring vaak dezelfde dag mogelijk, met duidelijke uitleg en herkeuring in één keer geregeld.",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    )
+      "Snelle, nauwkeurige keuring met direct advies. Herkeuring in één keer geregeld.",
   },
   {
-    title: "Onderhoud",
+    nr: "02",
+    title: "Onderhoud & service",
+    sub: "Alle merken · Kleine en grote beurt",
     description:
-      "Kleine en grote beurten, olieverversing, remmen, distributieriem en meer — voor alle merken.",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.653-4.655m5.14-5.63l3.5-3.5a2.498 2.498 0 013.107 3.107l-3.5 3.5" />
-      </svg>
-    )
+      "Regelmatig onderhoud verlengt de levensduur van uw auto. Van olieverversing tot distributieriemen.",
   },
   {
+    nr: "03",
     title: "Reparatie",
+    sub: "Diagnose met moderne apparatuur",
     description:
-      "Van motorproblemen tot elektronische storingen: diagnose en reparatie met moderne apparatuur.",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 10.607z" />
-      </svg>
-    )
+      "Waarschuwingslampje? Vreemd geluid? Wij vinden het probleem en lossen het op.",
   },
   {
+    nr: "04",
     title: "Spuitwerk",
+    sub: "Kleurmatching op computerbasis",
     description:
-      "Professioneel spuitwerk met nauwkeurige kleurmatching. Van kleine bijwerking tot volledige overlakking.",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-      </svg>
-    )
+      "Van plaatselijke bijwerking tot volledige overlakking — professioneel resultaat, gegarandeerd.",
   },
   {
+    nr: "05",
     title: "Schadeherstel",
+    sub: "Deuk, kras of aanrijdingsschade",
     description:
-      "Van kleine deuken tot aanrijdingsschade. Vakkundig herstel van plaatwerk, bumpers en koetswerk.",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    )
-  }
+      "Vakkundig herstel van plaatwerk, bumpers en koetswerk. Hulp bij verzekeringsafwikkeling.",
+  },
 ];
 
 const stats = [
   { value: "50+", label: "jaar ervaring" },
-  { value: "5", label: "diensten" },
+  { value: "5", label: "specialisaties" },
   { value: "RDW", label: "erkend" },
-  { value: "Alle", label: "merken welkom" }
-];
-
-const voordelen = [
-  "Eerlijk en transparant advies",
-  "Korte wachttijden, flexibele planning",
-  "Alle merken personenauto's en bestelauto's",
-  "Moderne diagnose-apparatuur"
+  { value: "∞", label: "merken welkom" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────────── */}
-      <section
-        className="relative flex min-h-[92vh] items-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
-      >
-        <div className="absolute inset-0 bg-neutral-900/78" />
+      {/* ─── HERO: SPLIT LAYOUT ─────────────────────────────── */}
+      <section className="lg:grid lg:min-h-[calc(100vh-4rem)] lg:grid-cols-2">
+        {/* Left — dark, text */}
+        <div className="flex flex-col justify-center bg-neutral-950 px-6 py-20 sm:px-10 lg:px-16 lg:py-0">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-500">
+            Bocholtz · Zuid-Limburg · Est. 1970
+          </p>
 
-        <div className="relative z-10 container-max py-24 sm:py-32">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-primary-400">
-            Bocholtz · Zuid-Limburg · Sinds 1970
-          </p>
-          <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Meer dan 50 jaar{" "}
-            <span className="text-primary-400">vakmanschap</span>{" "}
-            voor uw auto
+          <h1 className="mt-6 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Auto&shy;bedrijf<br />
+            <span className="text-primary-500">Maertz&shy;dorf</span>
           </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-white/60">
-            Autobedrijf Maertzdorf is uw specialist voor APK-keuring,
-            onderhoud, reparatie, spuitwerk en schadeherstel. Persoonlijk,
-            vakkundig en altijd eerlijk.
+
+          <p className="mt-7 max-w-sm text-sm leading-relaxed text-neutral-400">
+            Meer dan 50 jaar vakmanschap voor APK-keuring, onderhoud,
+            reparatie, spuitwerk en schadeherstel. Persoonlijk, eerlijk,
+            altijd dichtbij.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+
+          <div className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-400"
+              className="inline-flex items-center gap-2 rounded-sm bg-primary-600 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-700"
             >
               Afspraak maken
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
             <a
               href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-sm border border-neutral-700 px-6 py-3 text-sm font-medium text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white"
             >
-              Bel {siteConfig.contactPhone}
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              {siteConfig.contactPhone}
             </a>
           </div>
-        </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/25">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.2em]">
-            Scroll
-          </span>
-          <svg
-            className="h-4 w-4 animate-bounce"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* ── STATS ─────────────────────────────────────────────── */}
-      <section className="border-b border-white/5 bg-neutral-800">
-        <div className="container-max py-10">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-3xl font-bold text-white sm:text-4xl">
-                  {s.value}
-                </p>
-                <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-white/35">
-                  {s.label}
-                </p>
+          {/* Mini stats row */}
+          <div className="mt-14 grid grid-cols-3 gap-4 border-t border-neutral-800 pt-8">
+            {[
+              { v: "50+", l: "jaar" },
+              { v: "5", l: "diensten" },
+              { v: "RDW", l: "erkend" },
+            ].map((s) => (
+              <div key={s.l}>
+                <p className="text-2xl font-black text-white">{s.v}</p>
+                <p className="mt-0.5 text-[10px] font-medium uppercase tracking-widest text-neutral-500">{s.l}</p>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Right — full photo */}
+        <div className="relative h-72 sm:h-96 lg:h-auto">
+          <img
+            src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85"
+            alt="Autobedrijf Maertzdorf werkplaats"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* subtle red tint at bottom edge */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary-900/30 to-transparent" />
+        </div>
       </section>
 
-      {/* ── DIENSTEN ──────────────────────────────────────────── */}
-      <section className="bg-white py-20 sm:py-28">
+      {/* ─── DIENSTEN: EDITORIAL LIST ───────────────────────── */}
+      <section className="bg-neutral-50 py-20 sm:py-28">
         <div className="container-max">
           <AnimateOnScroll>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-600">
-              Onze diensten
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
-              Alles voor uw auto,
-              <br />
-              onder één dak
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-neutral-500">
-              Van periodieke APK tot vakkundig schadeherstel. Bij Autobedrijf
-              Maertzdorf bent u voor al uw autobehoeften aan het juiste adres.
-            </p>
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-600">
+                  Diensten
+                </p>
+                <h2 className="mt-2 text-4xl font-black tracking-tight text-neutral-900 sm:text-5xl">
+                  Wat wij doen
+                </h2>
+              </div>
+              <Link
+                href="/diensten"
+                className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition-colors hover:text-primary-600 sm:mt-0"
+              >
+                Alle diensten
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </AnimateOnScroll>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {diensten.map((dienst, i) => (
-              <AnimateOnScroll key={dienst.title} delay={i * 75}>
-                <div className="flex h-full flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary-200 hover:shadow-md">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
-                    {dienst.icon}
+          <div className="mt-10 divide-y divide-neutral-200">
+            {diensten.map((d, i) => (
+              <AnimateOnScroll key={d.nr} delay={i * 65}>
+                <div className="group flex items-start gap-6 py-7 transition-colors hover:bg-neutral-100 sm:gap-10 sm:px-3 sm:py-8">
+                  <span className="w-10 shrink-0 font-mono text-xs font-bold text-primary-500 sm:w-12">
+                    {d.nr}
                   </span>
-                  <div>
-                    <h3 className="font-semibold text-neutral-900">
-                      {dienst.title}
-                    </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-neutral-500">
-                      {dienst.description}
+                  <div className="flex-1">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
+                      <h3 className="text-lg font-bold text-neutral-900 sm:text-xl">
+                        {d.title}
+                      </h3>
+                      <span className="text-xs font-medium text-neutral-400">
+                        {d.sub}
+                      </span>
+                    </div>
+                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-neutral-500">
+                      {d.description}
                     </p>
                   </div>
+                  <svg
+                    className="mt-1 hidden h-5 w-5 shrink-0 text-neutral-300 transition-all group-hover:translate-x-1 group-hover:text-primary-500 sm:block"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </div>
               </AnimateOnScroll>
             ))}
           </div>
-
-          <AnimateOnScroll className="mt-10 text-center" delay={450}>
-            <Link
-              href="/diensten"
-              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
-            >
-              Bekijk alle diensten
-              <svg
-                className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </AnimateOnScroll>
         </div>
       </section>
 
-      {/* ── ABOUT ─────────────────────────────────────────────── */}
-      <section className="bg-neutral-900 py-20 sm:py-28">
+      {/* ─── STATS: HUGE NUMBERS ────────────────────────────── */}
+      <section className="bg-neutral-950 py-16 sm:py-20">
         <div className="container-max">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <AnimateOnScroll>
-              <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
-                  alt="Vakkundig monteur aan het werk"
-                  className="h-72 w-full object-cover sm:h-[420px]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 to-transparent" />
+          <div className="grid grid-cols-2 gap-px bg-neutral-800 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="flex flex-col items-center justify-center bg-neutral-950 py-12 px-4 text-center"
+              >
+                <span className="text-5xl font-black text-white sm:text-6xl lg:text-7xl">
+                  {s.value}
+                </span>
+                <span className="mt-2 text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500">
+                  {s.label}
+                </span>
               </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll delay={150}>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-400">
-                Over ons
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Een halve eeuw
-                <br />
-                vakmanschap
-              </h2>
-              <p className="mt-4 text-sm leading-relaxed text-white/50">
-                Wat begon als een klein garagebedrijf in Bocholtz is
-                uitgegroeid tot een complete werkplaats. Al meer dan 50 jaar
-                staat Autobedrijf Maertzdorf bekend om persoonlijk contact,
-                eerlijk advies en vakkundig werk voor alle merken.
-              </p>
-              <ul className="mt-7 space-y-3">
-                {voordelen.map((v) => (
-                  <li
-                    key={v}
-                    className="flex items-center gap-3 text-sm text-white/65"
-                  >
-                    <svg
-                      className="h-4 w-4 shrink-0 text-primary-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {v}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Link
-                  href="/over-ons"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/35 hover:bg-white/5"
-                >
-                  Meer over ons
-                </Link>
-              </div>
-            </AnimateOnScroll>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="bg-primary-500 py-16 sm:py-20">
-        <div className="container-max">
-          <AnimateOnScroll className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Klaar voor een afspraak?
-            </h2>
-            <p className="mt-4 text-base text-white/80">
-              Neem contact op of bel ons direct. Wij helpen u graag verder.
+      {/* ─── ABOUT: IMAGE LEFT / TEXT RIGHT ─────────────────── */}
+      <section className="lg:grid lg:grid-cols-2">
+        {/* Image */}
+        <div className="relative h-72 sm:h-96 lg:h-full lg:min-h-[520px]">
+          <img
+            src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80"
+            alt="Vakkundige monteur aan het werk"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Text */}
+        <div className="bg-neutral-50 px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <AnimateOnScroll>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-600">
+              Over ons
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight text-neutral-900 sm:text-5xl">
+              Halve eeuw<br />
+              <span className="text-primary-600">vakmanschap</span>
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-neutral-500">
+              Autobedrijf Maertzdorf begon als een klein familiebedrijf in
+              Bocholtz en groeide generatie op generatie uit tot de volledige
+              werkplaats die het vandaag is. Wij werken voor alle merken,
+              eerlijk en transparant.
+            </p>
+
+            <ul className="mt-6 space-y-3">
+              {[
+                "Eerlijk advies, geen verborgen kosten",
+                "Alle merken personenauto's en bestelauto's",
+                "Moderne diagnose-apparatuur",
+                "Snelle doorlooptijd, flexibele planning",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-neutral-600">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex gap-3">
+              <Link
+                href="/over-ons"
+                className="inline-flex items-center gap-2 rounded-sm border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:border-neutral-400 hover:bg-neutral-100"
+              >
+                Meer over ons
+              </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-50"
+                className="inline-flex items-center gap-2 rounded-sm bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-700"
               >
-                Contactformulier
+                Contact
               </Link>
-              <a
-                href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
-                className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/10"
-              >
-                Bel {siteConfig.contactPhone}
-              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ─── CTA STRIP ──────────────────────────────────────── */}
+      <section className="bg-primary-600 py-14 sm:py-16">
+        <div className="container-max">
+          <AnimateOnScroll>
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-2xl font-black text-white sm:text-3xl">
+                  Klaar voor een afspraak?
+                </p>
+                <p className="mt-1.5 text-sm text-red-100">
+                  Bel ons of gebruik het contactformulier. Wij reageren snel.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row sm:shrink-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-sm bg-white px-6 py-3 text-sm font-bold text-primary-700 transition-colors hover:bg-red-50"
+                >
+                  Contactformulier
+                </Link>
+                <a
+                  href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
+                  className="inline-flex items-center justify-center rounded-sm border-2 border-white/25 px-6 py-3 text-sm font-bold text-white transition-colors hover:border-white/50 hover:bg-white/10"
+                >
+                  {siteConfig.contactPhone}
+                </a>
+              </div>
             </div>
           </AnimateOnScroll>
         </div>

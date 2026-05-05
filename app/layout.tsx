@@ -5,7 +5,10 @@ import { siteConfig } from "../lib/siteConfig";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -41,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl">
-      <body className={`${inter.className} flex min-h-screen flex-col`}>
+    <html lang="nl" className={inter.variable}>
+      <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

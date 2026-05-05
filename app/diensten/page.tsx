@@ -18,133 +18,125 @@ const diensten = [
   {
     nr: "01",
     title: "APK-keuring",
-    subtitle: "Snel en vakkundig gekeurd",
+    sub: "RDW-erkend keurstation",
     description:
-      "Uw APK-keuring is bij ons in goede handen. Wij zijn een RDW-erkend keurstation en voeren de keuring zorgvuldig uit. Eventuele aandachtspunten bespreken wij direct met u — herkeuringen plannen we zo snel mogelijk in.",
+      "Uw APK-keuring is bij ons in goede handen. Wij voeren de keuring zorgvuldig uit en bespreken eventuele aandachtspunten direct met u. Herkeuringen plannen wij zo snel mogelijk in.",
     items: [
       "RDW-erkend keurstation",
       "Keuring vaak dezelfde dag mogelijk",
       "Duidelijke uitleg bij afkeurpunten",
-      "Reparatie en herkeuring in één keer"
-    ]
+      "Reparatie en herkeuring in één keer",
+    ],
   },
   {
     nr: "02",
     title: "Onderhoud & service",
-    subtitle: "Regelmatig onderhoud, zorgeloos rijden",
+    sub: "Kleine en grote beurten · Alle merken",
     description:
       "Regelmatig onderhoud voorkomt dure reparaties en verlengt de levensduur van uw auto. Wij verzorgen kleine en grote beurten voor alle merken personenauto's en lichte bedrijfswagens.",
     items: [
       "Kleine en grote beurt",
       "Olieverversing en filterwissels",
       "Remmen, distributieriem en koppeling",
-      "Seizoensgebonden checks (airco, banden)"
-    ]
+      "Seizoensgebonden checks",
+    ],
   },
   {
     nr: "03",
     title: "Reparatie",
-    subtitle: "Diagnose en reparatie van alle merken",
+    sub: "Diagnose met moderne apparatuur",
     description:
       "Of het nu gaat om een waarschuwingslampje, een vreemd geluid of een motorstoring: wij beschikken over de kennis en moderne apparatuur om het probleem te vinden en te verhelpen.",
     items: [
-      "Elektronische diagnose met moderne apparatuur",
+      "Elektronische diagnose",
       "Motor- en versnellingsbakproblemen",
       "Remmen, ophanging en stuurinrichting",
-      "Uitlaat- en koelsysteemreparaties"
-    ]
+      "Uitlaat- en koelsysteemreparaties",
+    ],
   },
   {
     nr: "04",
     title: "Spuitwerk",
-    subtitle: "Professioneel spuitwerk met oog voor detail",
+    sub: "Kleurmatching op computerbasis",
     description:
-      "Van een kleine bijwerking tot een volledige spuitbeurt: wij zorgen voor een perfect resultaat met nauwkeurige kleurmatching en hoogwaardige lakproducten.",
+      "Van een kleine bijwerking tot een volledige spuitbeurt: wij zorgen voor een perfect resultaat met nauwkeurige kleurmatching op computerbasis en hoogwaardige lakproducten.",
     items: [
       "Kleurmatching met computeranalyse",
       "Plaatselijke reparatie of volledige overlakking",
       "Hoogwaardige lakproducten",
-      "Zorgvuldige voorbereiding en afwerking"
-    ]
+      "Zorgvuldige voorbereiding en afwerking",
+    ],
   },
   {
     nr: "05",
     title: "Schadeherstel",
-    subtitle: "Vakkundige reparatie van schade",
+    sub: "Deuk · Kras · Aanrijdingsschade",
     description:
-      "Schade aan uw auto is vervelend. Wij zorgen ervoor dat uw auto er weer als nieuw uitziet — van kleine deuken tot grotere aanrijdingsschade.",
+      "Schade aan uw auto is vervelend. Wij zorgen ervoor dat uw auto er weer als nieuw uitziet — van kleine deuken tot grotere aanrijdingsschade. Wij helpen ook bij verzekeringsclaims.",
     items: [
       "Deuk- en krasreparatie",
       "Aanrijdingsschade herstellen",
       "Bumper- en plaatwerkherstel",
-      "Hulp bij schadeclaims en verzekeringen"
-    ]
-  }
+      "Hulp bij schadeclaims",
+    ],
+  },
 ];
 
 export default function DienstenPage() {
   return (
     <>
-      {/* Page hero */}
-      <section className="bg-neutral-900 py-16 sm:py-20">
+      {/* Page header */}
+      <section className="border-b border-neutral-200 bg-white py-14 sm:py-16">
         <div className="container-max">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-400">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-600">
             Autobedrijf Maertzdorf
           </p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-3 text-5xl font-black tracking-tight text-neutral-900 sm:text-6xl">
             Onze diensten
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50">
-            Van APK-keuring tot schadeherstel: een compleet pakket aan
-            diensten voor uw auto — alles onder één dak, door ervaren vakmensen.
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-500">
+            Alles voor uw auto onder één dak. Van snelle APK-keuring tot
+            vakkundig spuitwerk — uitgevoerd door ervaren vakmensen.
           </p>
         </div>
       </section>
 
-      {/* Diensten list */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="container-max space-y-5">
-          {diensten.map((dienst, i) => (
-            <AnimateOnScroll key={dienst.nr} delay={i * 55}>
-              <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8">
-                <div className="flex items-start gap-4">
-                  <span className="shrink-0 font-mono text-sm font-bold text-primary-300">
-                    {dienst.nr}
+      {/* Diensten */}
+      <section className="bg-neutral-50 py-6">
+        <div className="container-max">
+          {diensten.map((d, i) => (
+            <AnimateOnScroll key={d.nr} delay={i * 55}>
+              <div className="grid gap-6 border-b border-neutral-200 py-10 last:border-0 sm:grid-cols-[auto_1fr] sm:gap-10">
+                {/* Number */}
+                <div className="flex items-start gap-4 sm:flex-col sm:gap-0">
+                  <span className="font-mono text-4xl font-black text-primary-500 sm:text-5xl">
+                    {d.nr}
                   </span>
-                  <div className="flex-1">
-                    <h2 className="text-lg font-bold text-neutral-900">
-                      {dienst.title}
-                    </h2>
-                    <p className="mt-0.5 text-xs font-medium text-primary-600">
-                      {dienst.subtitle}
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                      {dienst.description}
-                    </p>
-                    <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                      {dienst.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 text-xs text-neutral-500"
-                        >
-                          <svg
-                            className="h-3.5 w-3.5 shrink-0 text-primary-500"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-1 sm:mt-3">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                      {d.sub}
+                    </span>
                   </div>
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h2 className="text-2xl font-black text-neutral-900 sm:text-3xl">
+                    {d.title}
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-500">
+                    {d.description}
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {d.items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-sm border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -153,34 +145,28 @@ export default function DienstenPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-neutral-900 py-14">
-        <div className="container-max">
-          <AnimateOnScroll>
-            <div className="flex flex-col gap-5 rounded-2xl border border-white/10 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
-              <div>
-                <p className="font-semibold text-white">
-                  Hulp nodig of een afspraak maken?
-                </p>
-                <p className="mt-1 text-sm text-white/45">
-                  Neem contact op. Wij helpen u met eerlijk advies.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 sm:flex-row sm:shrink-0">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-400"
-                >
-                  Neem contact op
-                </Link>
-                <a
-                  href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/5"
-                >
-                  Bel ons
-                </a>
-              </div>
-            </div>
-          </AnimateOnScroll>
+      <section className="bg-primary-600 py-12">
+        <div className="container-max flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xl font-black text-white">Hulp nodig?</p>
+            <p className="mt-1 text-sm text-red-100">
+              Bel of mail ons. Wij helpen u verder.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 sm:flex-row sm:shrink-0">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-sm bg-white px-5 py-2.5 text-sm font-bold text-primary-700 transition-colors hover:bg-red-50"
+            >
+              Neem contact op
+            </Link>
+            <a
+              href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
+              className="inline-flex items-center justify-center rounded-sm border-2 border-white/25 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:border-white/50"
+            >
+              Bel ons
+            </a>
+          </div>
         </div>
       </section>
     </>
