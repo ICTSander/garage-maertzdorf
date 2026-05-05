@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "../../lib/siteConfig";
+import { AnimateOnScroll } from "../../components/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "Over ons",
@@ -12,96 +14,145 @@ export const metadata: Metadata = {
   }
 };
 
+const waarden = [
+  {
+    title: "Eerlijkheid",
+    description:
+      "Wij bespreken altijd vooraf wat er nodig is en wat de kosten zijn. Geen verrassingen achteraf — alleen eerlijk advies."
+  },
+  {
+    title: "Vakmanschap",
+    description:
+      "Meer dan 50 jaar ervaring en continue bijscholing zorgen voor de beste kwaliteit. Wij doen alleen wat nodig is."
+  },
+  {
+    title: "Persoonlijk",
+    description:
+      "Bij ons bent u geen nummer. Wij nemen de tijd voor u, bespreken uw wensen en helpen u verder met een glimlach."
+  }
+];
+
 export default function OverOnsPage() {
   return (
-    <div className="container-max py-10 sm:py-12">
-      <div className="max-w-2xl">
-        <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl">
-          Over Autobedrijf Maertzdorf
-        </h1>
-        <p className="mt-3 text-sm text-neutral-600">
-          Al meer dan 50 jaar is Autobedrijf Maertzdorf een vertrouwd adres
-          voor automobilisten in Bocholtz en omgeving. Wat begon als een klein
-          garagebedrijf is uitgegroeid tot een complete werkplaats waar
-          vakmanschap en persoonlijke service centraal staan.
-        </p>
-      </div>
-
-      <div className="mt-8 grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <div className="space-y-4 text-sm text-neutral-700">
-          <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm shadow-neutral-200/60">
-            <h2 className="text-sm font-semibold text-neutral-900">
-              Een familiebedrijf met roots in Bocholtz
-            </h2>
-            <p className="mt-2 text-xs text-neutral-600">
-              Autobedrijf Maertzdorf is geworteld in de gemeenschap van
-              Bocholtz. Generatie na generatie hebben wij ons vak verfijnd en
-              onze diensten uitgebreid. Vandaag de dag bieden wij een compleet
-              pakket aan: van APK-keuring en onderhoud tot professioneel
-              spuitwerk en schadeherstel.
-            </p>
-          </section>
-
-          <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm shadow-neutral-200/60">
-            <h2 className="text-sm font-semibold text-neutral-900">
-              Onze aanpak
-            </h2>
-            <p className="mt-2 text-xs text-neutral-600">
-              Wij geloven in eerlijk en transparant werken. Voordat wij aan de
-              slag gaan, bespreken wij altijd wat er nodig is en wat de kosten
-              zijn. Geen verrassingen achteraf. Wij doen alleen wat nodig is en
-              adviseren u eerlijk over de staat van uw auto.
-            </p>
-            <ul className="mt-3 ml-4 list-disc space-y-1 text-xs text-neutral-600">
-              <li>Persoonlijk contact en eerlijk advies</li>
-              <li>Vooraf duidelijkheid over kosten</li>
-              <li>Vakkundig werk door ervaren monteurs</li>
-              <li>Korte wachttijden en flexibele planning</li>
-            </ul>
-          </section>
+    <>
+      {/* Page hero */}
+      <section className="bg-neutral-900 py-16 sm:py-20">
+        <div className="container-max">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-400">
+            Autobedrijf Maertzdorf
+          </p>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Over ons
+          </h1>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50">
+            Al meer dan 50 jaar een vertrouwd adres voor automobilisten in
+            Bocholtz en omgeving.
+          </p>
         </div>
+      </section>
 
-        <aside className="space-y-4 text-xs text-neutral-600">
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4 shadow-sm shadow-neutral-200/60">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
-              Locatie
-            </p>
-            <p className="mt-2 font-semibold text-neutral-900">
-              Bocholtz, Zuid-Limburg
-            </p>
-            <p className="mt-1">
-              Centraal gelegen in het Heuvelland, goed bereikbaar vanuit
-              Simpelveld, Vaals, Kerkrade en omstreken.
-            </p>
+      {/* Story */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container-max">
+          <div className="grid items-start gap-12 lg:grid-cols-2">
+            <AnimateOnScroll>
+              <img
+                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80"
+                alt="Werkplaats Autobedrijf Maertzdorf"
+                className="h-64 w-full rounded-2xl object-cover sm:h-80"
+                loading="lazy"
+              />
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={120}>
+              <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                Een familiebedrijf met roots in Bocholtz
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+                Autobedrijf Maertzdorf is geworteld in de gemeenschap van
+                Bocholtz. Wat begon als een klein garagebedrijf is generatie na
+                generatie uitgegroeid tot een complete werkplaats — en een
+                begrip in de regio.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Vandaag de dag bieden wij een volledig pakket aan: van
+                APK-keuring en onderhoud tot professioneel spuitwerk en
+                schadeherstel — voor vrijwel alle merken personenauto's en
+                lichte bedrijfswagens.
+              </p>
+
+              <div className="mt-6 rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-neutral-400">
+                  Locatie
+                </p>
+                <p className="mt-2 text-sm font-semibold text-neutral-900">
+                  {siteConfig.address.street}, {siteConfig.address.postcode}{" "}
+                  {siteConfig.address.city}
+                </p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  Centraal gelegen in het Heuvelland, goed bereikbaar vanuit
+                  Simpelveld, Vaals, Kerkrade en Gulpen.
+                </p>
+              </div>
+            </AnimateOnScroll>
           </div>
-          <div className="rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm shadow-neutral-200/60">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-neutral-900 py-16 sm:py-20">
+        <div className="container-max">
+          <AnimateOnScroll>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-400">
+              Onze aanpak
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Wat u van ons mag verwachten
-            </p>
-            <ul className="mt-2 ml-4 list-disc space-y-1">
-              <li>Meer dan 50 jaar ervaring</li>
-              <li>Alle merken welkom</li>
-              <li>Persoonlijke en eerlijke service</li>
-              <li>Alles onder &eacute;&eacute;n dak</li>
-            </ul>
+            </h2>
+          </AnimateOnScroll>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {waarden.map((w, i) => (
+              <AnimateOnScroll key={w.title} delay={i * 90}>
+                <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-6">
+                  <h3 className="font-semibold text-white">{w.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-white/45">
+                    {w.description}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            ))}
           </div>
-          <div className="rounded-2xl border border-primary-200 bg-primary-50/60 p-4 shadow-sm shadow-primary-100/80">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary-700">
-              Langskomen?
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary-500 py-14">
+        <div className="container-max text-center">
+          <AnimateOnScroll>
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Langskomen of een afspraak maken?
+            </h2>
+            <p className="mt-3 text-sm text-white/80">
+              U bent van harte welkom in Bocholtz.
             </p>
-            <p className="mt-1 text-neutral-800">
-              U bent van harte welkom op ons adres: Reinert 11a, 6351 HK
-              Bocholtz. Bel gerust voor een afspraak.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-3 inline-flex text-xs font-semibold text-primary-700 underline underline-offset-4"
-            >
-              Neem contact op
-            </Link>
-          </div>
-        </aside>
-      </div>
-    </div>
+            <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-50"
+              >
+                Neem contact op
+              </Link>
+              <a
+                href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`}
+                className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/10"
+              >
+                Bel ons
+              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+    </>
   );
 }

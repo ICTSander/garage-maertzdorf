@@ -4,10 +4,10 @@ export const siteConfig = {
     "Autobedrijf Maertzdorf in Bocholtz – al meer dan 50 jaar uw betrouwbare partner voor APK-keuring, onderhoud, reparatie, spuitwerk en schadeherstel.",
   url: "https://www.autobedrijfmaertzdorf.nl",
   ogImage: "https://www.autobedrijfmaertzdorf.nl/og-image.png",
-  contactEmail: "info@autobedrijfmaertzdorf.nl",
-  contactPhone: "+31 45 000 0000",
+  contactEmail: "info@automaertzdorf.nl",
+  contactPhone: "+31 45 544 1440",
   address: {
-    street: "Reinert 11a",
+    street: "Reinert 11A",
     postcode: "6351 HK",
     city: "Bocholtz",
     region: "Zuid-Limburg"
